@@ -1,0 +1,11 @@
+poetry add fastapi
+docker run --name some-postgres -p 5432:5432 -e POSTGRES_PASSWORD=54321 -d postgres
+poetry add sqlalchemy
+poetry add psycopg2
+poetry add uvicorn[standard]
+uvicorn main:app --host localhost --port 8000 --reload
+poetry add python-multipart
+poetry add pydantic[email]
+poetry add jinja2
+alembic revision --autogenerate -m 'Init'
+alembic upgrade head
